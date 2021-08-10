@@ -37,7 +37,7 @@ public class ReverseSentence {
 					System.out.println(result);
 					
 				}
-				result = result + " ";
+				
 				counter=0;
 			}
 			counter++;
