@@ -7,18 +7,20 @@ public class ReverseSentence {
 				"Find breaking Montreal & COVID-19 news, live coverage, weather, traffic, in-depth reporting, sports, local events and video.",
 				null, "" };
 
-		System.out.println("result= " + reverseMethod(sampleArray[0]));
-		System.out.println("result= " + reverseMethod(sampleArray[1]));
-		System.out.println("result= " + reverseMethod(sampleArray[2]));
-		System.out.println("result= " + reverseMethod(sampleArray[3]));
-		System.out.println("result= " + reverseMethod(sampleArray[4]));
+		System.out.println(reverseMethod(sampleArray[0]));
+		System.out.println(reverseMethod(sampleArray[1]));
+		System.out.println(reverseMethod(sampleArray[2]));
+		System.out.println(reverseMethod(sampleArray[3]));
+		System.out.println(reverseMethod(sampleArray[4]));
 	}
 
 	// method to reverse any given string
 	public static String reverseMethod(String sample) {
 		String result = "";
 		int counter = 0;
-		if (sample != null) {
+		// try catch to avoid null pointer
+		try {
+     
 			// for loop to iterate through the string reverse
 			for (int i = sample.length() - 1; i > -1; i--) {
 				char holder = sample.charAt(i);
@@ -56,7 +58,9 @@ public class ReverseSentence {
 				}
 				counter++;
 			}
-		}
+		} catch (NullPointerException e) {
+            System.out.print("NullPointerException Caught. Please provide a a string!");
+        }
 		return result;
 	}
 
