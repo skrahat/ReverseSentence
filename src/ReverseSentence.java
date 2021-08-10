@@ -20,7 +20,7 @@ public class ReverseSentence {
 		int counter = 0;
 		// try catch to avoid null pointer
 		try {
-     
+
 			// for loop to iterate through the string reverse
 			for (int i = sample.length() - 1; i > -1; i--) {
 				char holder = sample.charAt(i);
@@ -28,7 +28,7 @@ public class ReverseSentence {
 				// checking for spaces
 				if (holder == ' ') {
 
-					// adding found word into result
+					// adding found word into result by one character at a time
 					for (int j = 1; j <= counter; j++) {
 						if (sample.charAt(i + j) != ' ') {
 							result = result + sample.charAt(i + j);
@@ -43,7 +43,7 @@ public class ReverseSentence {
 				}
 				// special case for first word without a space in string
 				if (i == 0) {
-
+					// adding found word into result by one character at a time
 					for (int j = 0; j <= counter; j++) {
 						if (sample.charAt(i + j) != ' ') {
 							result = result + sample.charAt(i + j);
@@ -59,8 +59,8 @@ public class ReverseSentence {
 				counter++;
 			}
 		} catch (NullPointerException e) {
-            System.out.print("NullPointerException Caught. Please provide a a string!");
-        }
+			System.out.print("NullPointerException Caught. Please provide a a string!");
+		}
 		return result;
 	}
 
